@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header nav {
+  display: flex;
+}
+header nav ul {
+  display: flex;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+header nav ul li {
+  padding-right: 10px;
+  list-style: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+header nav button {
+  padding: 0px 25px;
+}/*# sourceMappingURL=style.css.map */
