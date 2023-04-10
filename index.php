@@ -83,10 +83,13 @@ if(isset($_GET['action'])){
       $ctrlAccueil->pageAjoutFilm();
     break;
 
-    case "pageAcceuil" : 
+
+    // case pour aller à la page d'acceuil
+    case "pageAccueil" : 
       $ctrlAccueil->pageAccueil(); 
     break;
 
+    // case pour la suppression d'un film
     case "delete" :
       $ctrlFilm->delete($id);
     break;

@@ -23,7 +23,7 @@ class FilmController {
         $sql = "SELECT DISTINCT m.title, m.release_date_fr, m.duration, m.poster, m.note, m.synopsis
         FROM movie AS m
         INNER JOIN director AS d ON d.id_director = m.director_id
-        WHERE id_movie = :id"; // à faire pour les autres 
+        WHERE id_movie = :id";
 
         $sql1 = "SELECT DISTINCT d.firstname, d.lastname
         FROM director AS d
