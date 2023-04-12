@@ -51,7 +51,8 @@ class ActeurController {
 
                 $params = ["firstname"=>$firstname, "lastname"=>$lastname, "birth_date"=>$birth_date, "gender"=>$gender, "photo"=>$photo];
 
-                $dao->executerRequete($sql, $params); 
+                $acteurs = $dao->executerRequete($sql, $params); 
+
                 require "View/acteur/ajouterActeur.php";
             }  
         }

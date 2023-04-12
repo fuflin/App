@@ -48,11 +48,13 @@ class RealisateurController {
 
                 $params = ["firstname"=>$firstname, "lastname"=>$lastname, "photo"=>$photo];
 
-                $dao->executerRequete($sql, $params); 
+                $realisateurs = $dao->executerRequete($sql, $params); 
                 
                 require "View/realisateur/ajouterRealisateur.php";
             }  
         }
+
+        header("location:index.php?action=listRealisateurs");
     }
 }
 ?>

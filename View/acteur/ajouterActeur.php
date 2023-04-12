@@ -14,11 +14,15 @@
         <label for="firstname" class="form-label" style="text-align: center; color: white;">Prénom</label>
         <input type="text" class="form-control" name="firstname">
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
+        <label for="gender" class="form-label" style="text-align: center; color: white;">Sexe</label>
+        <input type="text" class="form-control" name="gender">
+    </div>
+    <div class="col-md-4">
         <label for="photo" class="form-label" style="text-align: center; color: white;">Photo</label>
         <input type="text" class="form-control" name="photo">
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
         <label for="birth_date" class="form-label" style="text-align: center; color: white;">Date de naissance</label>
         <input type="date" class="form-control" name="birth_date">
     </div>

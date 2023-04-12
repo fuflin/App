@@ -74,7 +74,7 @@ class FilmController {
 
                 $dao = new DAO();
 
-                $sql = "INSERT INTO movie (title, duration, release_date_fr, note, synopsis, poster,director_id) 
+                $sql = "INSERT INTO movie (title, duration, release_date_fr, note, synopsis, poster, director_id) 
                 VALUES (:title, :duration, :release_date_fr, :note, :synopsis, :poster, :director_id)";
 
                 $params = [
@@ -109,27 +109,20 @@ class FilmController {
         if (isset($_POST['submit'])){
 
             $role = filter_input(INPUT_POST, "role", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $id_acteur = $_POST['actor_id'];
+            $id_movie = $_POST['movie_id'];
 
-            if($role){
+            if($role&&$id_acteur&&$id_movie){
 
                 $dao = new DAO();
 
-                $sql = "INSERT INTO casting (role) VALUES (:role)";
+                $sql = "INSERT INTO casting (role, actor_id, movie_id) VALUES (:role, :actor_id, :movie_id)";
 
-                $params = ["role"=>$role];
+                $params = ["role"=>$role, "actor_id"=>$id_acteur, "movie_id"=>$id_movie];
 
-                $casting = $dao->executerRequete($sql, $params); 
+                $castings = $dao->executerRequete($sql, $params); 
 
-                $id_actor = $_POST['id_actor'];
-                $id_movie = $_POST['id_movie'];
-
-                $sql = "INSERT INTO g_movie (genre_id, movie_id) VALUES (:genre_id, movie_id)";
-
-                $params = ["actor_id" => $id_actor, "movie_id"=>$id_movie];
-
-                $castings = $dao->executerRequete($sql, $params);
-
-                require "View/acteur/ajouterActeur.php";
+                require "View/acteur/ajoutCasting.php";
             }  
         }
     }

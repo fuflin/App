@@ -32,7 +32,7 @@ $date = new DateTime($film['release_date_fr']);
 
 <h2 class="card-title" style="text-align: center; color: white;">Casting du film</h2><br><br><br>
 
-<button class="btn btn-dark" style="display: flex;justify-content: center;margin: auto;"><a style="color: white;" href="index.php?action=pageAjoutCasting">ADD Casting</a></button>
+<button class="btn btn-dark" style="display: flex; justify-content: center; margin: auto; margin-bottom: 30x;"><a style="color: white;" href="index.php?action=pageAjoutCasting&id=<?=$film['id_movie']?>">ADD Casting</a></button>
 
 <?php
 

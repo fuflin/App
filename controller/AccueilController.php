@@ -48,15 +48,15 @@ class AccueilController {
              FROM actor AS a, casting AS c
              WHERE c.actor_id = a.id_actor";
 
-             $castings = $dao->executerRequete($sql);
+             $acteurs = $dao->executerRequete($sql);
              
-             $sql = "SELECT *
+             $sql2 = "SELECT m.title, m.id_movie
              FROM casting c, movie m
              WHERE c.movie_id = m.id_movie";
 
-             $castings = $dao->executerRequete($sql);
+             $film = $dao->executerRequete($sql2);
 
-     require "View/film/ajoutCasting.php";
+     require "View/film/ajouterCasting.php";
     }
 
 }
