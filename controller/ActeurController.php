@@ -41,14 +41,15 @@ class ActeurController {
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $birth_date = filter_input(INPUT_POST, "birth_date", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $gender = filter_input(INPUT_POST, "gender", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $photo = filter_input(INPUT_POST, "poster", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-            if($lastname&&$firstname&&$birth_date&&$gender){
+            if($lastname&&$firstname&&$birth_date&&$gender&&$photo){
 
                 $dao = new DAO();
 
-                $sql = "INSERT INTO actor (firstname, lastname, birth_date, gender) VALUES (:firstname, :lastname, :birth_date, :gender)";
+                $sql = "INSERT INTO actor (firstname, lastname, birth_date, gender, photo) VALUES (:firstname, :lastname, :birth_date, :gender, :photo)";
 
-                $params = ["firstname"=>$firstname, "lastname"=>$lastname, "birth_date"=>$birth_date, "gender"=>$gender];
+                $params = ["firstname"=>$firstname, "lastname"=>$lastname, "birth_date"=>$birth_date, "gender"=>$gender, "photo"=>$photo];
 
                 $dao->executerRequete($sql, $params); 
                 require "View/acteur/ajouterActeur.php";

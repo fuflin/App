@@ -104,6 +104,36 @@ class FilmController {
         header("location:index.php?action=listFilms");
     }
 
+    public function addCasting(){
+
+        if (isset($_POST['submit'])){
+
+            $role = filter_input(INPUT_POST, "role", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            if($role){
+
+                $dao = new DAO();
+
+                $sql = "INSERT INTO casting (role) VALUES (:role)";
+
+                $params = ["role"=>$role];
+
+                $casting = $dao->executerRequete($sql, $params); 
+
+                $id_actor = $_POST['id_actor'];
+                $id_movie = $_POST['id_movie'];
+
+                $sql = "INSERT INTO g_movie (genre_id, movie_id) VALUES (:genre_id, movie_id)";
+
+                $params = ["actor_id" => $id_actor, "movie_id"=>$id_movie];
+
+                $castings = $dao->executerRequete($sql, $params);
+
+                require "View/acteur/ajouterActeur.php";
+            }  
+        }
+    }
+
     public function delete($id){
 
         $id = $_GET['id']; // récupération de l'id du film à supprimer

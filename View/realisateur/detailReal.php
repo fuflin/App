@@ -1,6 +1,6 @@
 <?php ob_start() ?>
 
-<h1>Bienvenue sur ma page detail réalisateur</h1>
+<h1 style="text-align: center;">Détails des réalisateurs</h1>
 
 <?php
 
@@ -9,17 +9,17 @@ $film = $film->fetch();
 
 
 ?>
-
-<div class="card" style="width: 18rem;">
+<div style="display: flex;justify-content: center;width: 60%;margin: auto;">
+  <div class="card" style="width: 40%;">
   <img src="<?=$realisateur['photo'];?>" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">Filmographie</h5>
-    <p class="card-text"><?php
-    echo "Prénom: " .$realisateur['firstname']. "<br>";
-    echo "Nom: " .$realisateur['lastname']. "<br>";
-    echo "Film réalisé: " .$film['title']. "<br>";
-    ?></p>
-    
+    <div class="card-body">
+    <h5 class="card-title" style="text-align: center;">Détail du réalisateur</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" style="text-align: center;"><?="<strong>Nom:  </strong><br>".$realisateur['lastname']. "<br>";?></li>
+      <li class="list-group-item" style="text-align: center;"><?="<strong>Prénom: </strong><br>" .$realisateur['firstname']. "<br>";?></li>
+      <li class="list-group-item" style="text-align: center;"><?="<strong>Filmographie: </strong><br>" .$film['title']. "<br>";?></li>
+    </ul>
   </div>
 </div>
 

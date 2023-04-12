@@ -67,6 +67,10 @@ if(isset($_GET['action'])){
       $ctrlFilm->addFilm();
     break;
 
+    case "ajoutCasting" :
+      $ctrlFilm->addCasting();
+    break;
+
     case "ajoutActeur" :
       $ctrlActeur->addActeur();
     break;
@@ -83,6 +87,9 @@ if(isset($_GET['action'])){
       $ctrlAccueil->pageAjoutFilm();
     break;
 
+    case "pageAjoutCasting" :
+      $ctrlAccueil->pageAjoutCasting();
+    break;
 
     // case pour aller à la page d'acceuil
     case "pageAccueil" : 

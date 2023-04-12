@@ -40,6 +40,23 @@ class AccueilController {
         require "View/film/ajoutFilm.php";
     }
 
+    public function pageAjoutCasting(){
+        
+        $dao = new DAO();
 
+             $sql = "SELECT firstname, lastname, id_actor
+             FROM actor AS a, casting AS c
+             WHERE c.actor_id = a.id_actor";
+
+             $castings = $dao->executerRequete($sql);
+             
+             $sql = "SELECT *
+             FROM casting c, movie m
+             WHERE c.movie_id = m.id_movie";
+
+             $castings = $dao->executerRequete($sql);
+
+     require "View/film/ajoutCasting.php";
+    }
 
 }

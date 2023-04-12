@@ -4,22 +4,7 @@
   box-sizing: border-box;
 }
 
-header nav {
-  display: flex;
-}
-header nav ul {
-  display: flex;
-  padding-left: 30px;
-  padding-top: 20px;
-}
-header nav ul li {
-  padding-right: 10px;
-  list-style: none;
-}
-header nav ul li a {
-  text-decoration: none;
-  color: black;
-}
-header nav button {
-  padding: 0px 25px;
+body {
+  background-image: url("https://i.pinimg.com/originals/c9/6d/09/c96d09dd9e2ac87f10301cb40f94e8d3.jpg");
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */

@@ -38,14 +38,15 @@ class RealisateurController {
 
             $lastname = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $photo = filter_input(INPUT_POST, "poster", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-            if($lastname&&$firstname){
+            if($lastname&&$firstname&&$photo){
 
                 $dao = new DAO();
 
-                $sql = "INSERT INTO director (firstname, lastname) VALUES (:firstname, :lastname)";
+                $sql = "INSERT INTO director (firstname, lastname, photo) VALUES (:firstname, :lastname, :photo)";
 
-                $params = ["firstname"=>$firstname, "lastname"=>$lastname];
+                $params = ["firstname"=>$firstname, "lastname"=>$lastname, "photo"=>$photo];
 
                 $dao->executerRequete($sql, $params); 
                 

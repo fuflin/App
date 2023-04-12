@@ -4,34 +4,7 @@
     box-sizing: border-box;
 }
 
-header{
+body{
 
-    nav{
-
-        display: flex;
-
-        ul{
-
-            display: flex;
-            padding-left: 30px;
-            padding-top: 20px;
-            
-            li{
-
-                padding-right: 10px;
-                list-style: none;
-
-                a{
-
-                    text-decoration: none;
-                    color: black;
-                }
-            }
-        }
-
-        button{
-
-            padding: 0px 25px;
-        }
-    }
+    background-image: url("https://s2.qwant.com/thumbr/0x380/c/7/addf244e822b8c79b0838d4cef73d75844f86de44a5c8b25f6cbe8e1af94e3/Liquicity_space_sky_colorful-134229.png!d.jpg?u=https%3A%2F%2Fc.wallhere.com%2Fphotos%2Fac%2F16%2FLiquicity_space_sky_colorful-134229.png!d&q=0&b=1&p=0&a=0");
 }

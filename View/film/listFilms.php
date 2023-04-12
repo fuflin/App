@@ -1,24 +1,25 @@
 <?php ob_start()?>
 
-<h1>Bienvenue sur ma page film</h1>
+<h1 style="text-align: center; color: white; margin-bottom: 30px">Listes des Films</h1>
 
-<?php
-while($film = $films->fetch()){?>
+<button class="btn btn-dark" style="display: flex;justify-content: center;margin: auto;"><a style="color: white;" href="index.php?action=pageAjoutFilm">ADD Film</a></button>
 
-<div class="card" style="width: 18rem;">
-  <img src="<?=$film['poster']?>" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Titre</h5>
-    <p class="card-text"><a href="index.php?action=detailFilm&id=<?=$film['id_movie']?>"><?=$film['title']?></a><br></p>
+<div class="container" style="display: flex;flex-wrap: wrap;">
+
+<?php while($film = $films->fetch()){ ?>
+
+  <div class="card" style="background-image: url('https://i.pinimg.com/originals/c9/6d/09/c96d09dd9e2ac87f10301cb40f94e8d3.jpg'); width: 29%; margin: 25px; ">
+    <img src="<?=$film['poster']?>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" style = "text-align: center; color: white;">Titre</h5>
+      <p class="card-text" style="text-align: center; "><a style="color: white;" href="index.php?action=detailFilm&id=<?=$film['id_movie']?>"><?=$film['title']?></a><br></p>
+    </div>
   </div>
-</div>
-    
-    
+
+
 <?php
 }
 ?>
-
-<button class="btn btn-dark"><a href="index.php?action=pageAjoutFilm">ADD Film</a></button>
 
 <?php
 

@@ -1,23 +1,30 @@
 <?php ob_start() 
 ?>
-<h1>Bienvenue sur ma page liste acteur</h1>
-<?php
-while($acteur = $acteurs->fetch()){?>
 
-<div class="card" style="width: 18rem;">
-  <img src="<?=$acteur['photo']?>" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Acteur</h5>
-    <p class="card-text"><a href="index.php?action=detailActeur&id=<?=$acteur['id_actor']?>"><?=$acteur['firstname']. " " .$acteur['lastname']?></a><br></p>
-  </div>
-</div>
-    
+<h1 style="text-align: center; color: white; margin-bottom: 30px">Liste des acteurs/actrices</h1>
+
+<button class="btn btn-dark" style="display: flex;justify-content: center;margin: auto; margin-bottom: 30px"><a style="color: white;" href="index.php?action=pageAjoutActeur">ADD Acteur</a></button>
+
+<div class="container" style="display: flex;flex-wrap: wrap;">
+
+<?php while($acteur = $acteurs->fetch()){?>
+
+    <div class="card" style="width: 20%; margin: 25px;">
+      <img src="<?=$acteur['photo']?>" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Acteur</h5>
+        <p class="card-text" style="text-align: center;"><a href="index.php?action=detailActeur&id=<?=$acteur['id_actor']?>"><?=$acteur['firstname']. " " .$acteur['lastname']?></a><br></p>
+      </div>
+    </div> 
 
 <?php
 }
-
 ?>
-<button class="btn btn-dark"><a href="index.php?action=pageAjoutActeur">ADD Acteur</a></button>
+
+</div>
+
+
+
 <?php
 
 $title = "liste des acteurs";
