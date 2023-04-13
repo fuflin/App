@@ -109,8 +109,8 @@ class FilmController {
         if (isset($_POST['submit'])){
 
             $role = filter_input(INPUT_POST, "role", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $id_acteur = $_POST['actor_id'];
-            $id_movie = $_POST['movie_id'];
+            $id_acteur = $_POST['id_actor'];
+            $id_movie = $_POST['id_movie'];
 
             if($role&&$id_acteur&&$id_movie){
 
@@ -122,8 +122,8 @@ class FilmController {
 
                 $castings = $dao->executerRequete($sql, $params); 
 
-                require "View/acteur/ajoutCasting.php";
-            }  
+                require "View/film/ajouterCasting.php";
+            }
         }
     }
 
@@ -133,7 +133,7 @@ class FilmController {
 
         $dao = new DAO();
 
-            $sql = "DELETE  
+            $sql = "DELETE 
             FROM g_movie
             WHERE movie_id = :id";
 
@@ -141,10 +141,17 @@ class FilmController {
             FROM movie
             WHERE id_movie = :id"; 
 
+            $sql3 = "DELETE 
+            FROM casting
+            WHERE movie_id = :id";
+
             $params = ['id' => $id];
 
+
+        $films = $dao->executerRequete($sql3, $params);
         $films = $dao->executerRequete($sql, $params);
         $films = $dao->executerRequete($sql2, $params);
+        
 
         header("location:index.php?action=listFilms");
 

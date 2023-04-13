@@ -6,7 +6,7 @@
 
 
     
-<form class="row g-3" action="index.php?action=ajoutFilm" method="post">
+<form class="row g-3" action="index.php?action=ajoutReal" method="post">
     <div class="col-md-4">
         <label for="photo" class="form-label" style="text-align: center; color: white;">Photo</label>
         <input type="text" class="form-control" name="photo">

@@ -4,7 +4,7 @@
 
 <h2 style="text-align: center; color: white; margin-bottom: 30px;">Ajouter Acteur</h2>
 
-<form class="row g-3" action="index.php?action=ajoutFilm" method="post">
+<form class="row g-3" action="index.php?action=ajoutActeur" method="post">
     
     <div class="col-md-6">
         <label for="lastname" class="form-label" style="text-align: center; color: white;">Nom</label>

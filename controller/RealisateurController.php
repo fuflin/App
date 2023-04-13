@@ -38,7 +38,7 @@ class RealisateurController {
 
             $lastname = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $photo = filter_input(INPUT_POST, "poster", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $photo = filter_input(INPUT_POST, "photo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             if($lastname&&$firstname&&$photo){
 

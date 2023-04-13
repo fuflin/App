@@ -44,17 +44,16 @@ class AccueilController {
         
         $dao = new DAO();
 
-             $sql = "SELECT firstname, lastname, id_actor
+             $sql = "SELECT DISTINCT firstname, lastname, id_actor
              FROM actor AS a, casting AS c
              WHERE c.actor_id = a.id_actor";
 
              $acteurs = $dao->executerRequete($sql);
              
-             $sql2 = "SELECT m.title, m.id_movie
-             FROM casting c, movie m
-             WHERE c.movie_id = m.id_movie";
+             $sql2 = "SELECT DISTINCT m.title, m.id_movie
+             FROM movie m";
 
-             $film = $dao->executerRequete($sql2);
+             $films = $dao->executerRequete($sql2);
 
      require "View/film/ajouterCasting.php";
     }

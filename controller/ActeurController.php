@@ -41,7 +41,7 @@ class ActeurController {
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $birth_date = filter_input(INPUT_POST, "birth_date", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $gender = filter_input(INPUT_POST, "gender", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $photo = filter_input(INPUT_POST, "poster", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $photo = filter_input(INPUT_POST, "photo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             if($lastname&&$firstname&&$birth_date&&$gender&&$photo){
 
